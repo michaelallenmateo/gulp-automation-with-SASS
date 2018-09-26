@@ -1,17 +1,17 @@
-# gulp-automation-with-SASS
+# Gulp Automation With SASS
 
 A package for compiling SASS and running a dev server
 
-Installation:
+## Installation:
 
-     - To install dependecies (in package.json)
+ To install dependecies (in package.json)
 
- $ npm install
+        $ npm install
 
-Run
-    - To Run the server and watch changes in SASS file
+## Run
+  To Run the server and watch changes in SASS file
  
- $ gulp watch
+        $ gulp watch
 
 how to use this workflow:
 
@@ -22,17 +22,27 @@ how to use this workflow:
 3.  in your gitbash or terminal type:  gulp watch
 
 
-NOTES:
+###### NOTES:
 
 Folder Structure
 
-app
-    -css
-        -main.css
-    -img
-    -sass
+      app
+
+       -css
+
+         -main.css    
+
+       -img
+
+       -sass
+
         -main.scss
-    -index.html
-nodes_module
-gulpfile.js
-package.json   
+
+       -index.html
+
+      nodes_module
+
+      gulpfile.js
+
+      package.json   
+
