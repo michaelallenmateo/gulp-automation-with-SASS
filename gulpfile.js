@@ -17,6 +17,7 @@ gulp.task("sass", function () {
 gulp.task("watch", ["sass"], function () {
     browserSync.init({server: "./app", notify: false});
 
+    //  . /app/sass/**/*.scss means all .scss files in subfolders
     gulp.watch(["./app/sass/*.scss"], ["sass"]);
     gulp.watch(["./app/*.html"]).on("change", browserSync.reload);
 });

@@ -1,0 +1,47 @@
+1. npm init
+
+2. npm install --save-dev gulp gulp-sass browser-sync gulp-autoprefixer
+
+2.5 create a gulpfile.js on the root folder 
+
+3. inside the gulpfile.js
+type:
+
+const gulp = require("gulp");
+const browserSync = require("browser-sync").create();
+const sass = require("gulp-sass");
+const autoprefixer = require('gulp-autoprefixer');
+
+//complie Sass
+
+gulp.task("sass", function () {
+    return gulp.src(["src/scss/*.scss"]).pipe(sass())
+    .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest("src/css")
+        ).pipe(browserSync.stream());
+});
+
+//watch & serve
+
+gulp.task("serve", ["sass"], function () {
+    browserSync.init({server: "./src"});
+
+    //all scss
+    gulp.watch(["src/scss/**/*.scss"], ["sass"]); 
+    gulp.watch(["src/*.html"]).on("change", browserSync.reload);
+});
+
+//default
+gulp.task("default", ["serve"]);
+
+4. in command line or gitbash type:
+npm install -g gulp-cli
+
+5. create an html file
+
+6. change package.json script to the "start":"gulp";
+
+7. to open server type in the gitbash or terminal: npm start (to start local auto reload server)
